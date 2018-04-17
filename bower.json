@@ -1,0 +1,22 @@
+{
+  "name": "sitesearch",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "eamarelo <eamarelo@hotmail.fr>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/eamarelo/site-search",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "foundation": "^5.5.3"
+  }
+}
