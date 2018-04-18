@@ -19,4 +19,20 @@ let articleSchema =  mongoose.Schema({
   }
 });
 
+articleSchema.plugin(searchPlugin, {
+  fields: ['searchText']
+});
+
+  var Model = mongoose.model('Article', articleSchema);
+  Model.search('some query', {title: 1}, {
+    conditions: {title: {$exists: true}},
+    sort: {title: 1},
+    limit: 10
+  }, function(err, data) {
+    // array of finded results 
+    console.log('data results', data.results);
+    // count of all matching objects 
+    console.log('data totalCount', data.totalCount);
+  });
+
 let Article = module.exports = mongoose.model('Article', articleSchema);

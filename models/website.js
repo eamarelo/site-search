@@ -24,6 +24,3 @@ websiteSchema.plugin(searchPlugin, {
 });
 
 let Website = module.exports = mongoose.model('Website', websiteSchema);
-
-/*mongoose.model('Track', articleSchema);
-module.exports = mongoose.model('Track');*/

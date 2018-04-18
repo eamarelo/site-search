@@ -8,7 +8,6 @@ let Website = require('../models/website');
 router.get('/', function(req, res, next) {
    Article.find({}, function(err, articles){
     if(err){
-      console.log(err);
     } else {
       res.render('index', {
         title:'Articles',
