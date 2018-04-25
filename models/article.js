@@ -1,7 +1,7 @@
-var mongoose = require('mongoose');  
-searchPlugin = require('mongoose-search-plugin');
+var mongoose = require('mongoose');
+var searchPlugin = require('mongoose-search-plugin');
 
-let articleSchema =  mongoose.Schema({  
+let articleSchema =  mongoose.Schema({
   title:{
   	type: String,
   	required: true
@@ -12,7 +12,7 @@ let articleSchema =  mongoose.Schema({
   },
   description:{
   	type: String
-  }, 
+  },
   created_at:{
   	type: Date,
   	default: Date.now
@@ -20,7 +20,7 @@ let articleSchema =  mongoose.Schema({
 });
 
 articleSchema.plugin(searchPlugin, {
-  fields: ['searchText']
+  fields: ['title']
 });
 
   var Model = mongoose.model('Article', articleSchema);
@@ -29,9 +29,9 @@ articleSchema.plugin(searchPlugin, {
     sort: {title: 1},
     limit: 10
   }, function(err, data) {
-    // array of finded results 
+    // array of finded results
     console.log('data results', data.results);
-    // count of all matching objects 
+    // count of all matching objects
     console.log('data totalCount', data.totalCount);
   });
 
