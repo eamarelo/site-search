@@ -34,7 +34,6 @@ router.post('/add', function(req, res){
         console.log(err);
         return;
       } else {
-        console.log('flash--------------------------------------------------------------------------')
         req.flash('success','website Added');
         res.redirect('/');
       }

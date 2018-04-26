@@ -1,7 +1,7 @@
-var mongoose = require('mongoose');  
-searchPlugin = require('mongoose-search-plugin');
+var mongoose = require('mongoose');
+var searchPlugin = require('mongoose-search-plugin');
 
-var websiteSchema = new mongoose.Schema({  
+let websiteSchema =  mongoose.Schema({
   title:{
   	type: String,
   	required: true
@@ -12,15 +12,16 @@ var websiteSchema = new mongoose.Schema({
   },
   description:{
   	type: String
-  }, 
+  },
   created_at:{
   	type: Date,
   	default: Date.now
-  }
+  },
+  tags: [String]
 });
 
 websiteSchema.plugin(searchPlugin, {
-	fields: ['title', 'description', 'url']
+  fields: ['title', 'url', 'description']
 });
 
-let Website = module.exports = mongoose.model('Website', websiteSchema);
+  let Website = module.exports = mongoose.model('Website', websiteSchema);

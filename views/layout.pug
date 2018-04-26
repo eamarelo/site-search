@@ -11,9 +11,9 @@ html
         form(method="post", action="/")
           .row
             .text-center
-              input(type="radio", name="searchType", value="website" checked='')
+              input(type="radio", id="searchWebsite", name="searchType", value="website" checked='')
               | Website
-              input(type="radio", name="searchType", value="article")
+              input(type="radio", id="searchArticle", name="searchType", value="article")
               | Article
             .large-10.columns
               input(type="text", placeholder="Search...", name="searchText")
