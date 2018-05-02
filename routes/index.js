@@ -40,7 +40,7 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.post("/", function Query(req, res, cb) {
+router.post("/", function (req, res) {
   if(req.body.searchType =='website'){
       var query = req.body.searchText;
       Website.search(query, {title: 1}, {
@@ -71,7 +71,7 @@ router.post("/", function Query(req, res, cb) {
       }, function(err, data) {
         // array of finded results
         console.log('data results', data.results);
-        
+
         res.render('index', {
           titleResult: 'Résultats Articles',
           result: data.results
